@@ -17,6 +17,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  username: postgres
+  password: Soithought.6
+  host: localhost
+  port: 5432
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -24,6 +28,7 @@ default: &default
 development:
   <<: *default
   database: blog_app_development
+  username: postgres
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -58,6 +63,7 @@ development:
 test:
   <<: *default
   database: blog_app_test
+  username: postgres
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -82,5 +88,5 @@ test:
 production:
   <<: *default
   database: blog_app_production
-  username: blog_app
+  username: postgres
   password: <%= ENV["BLOG_APP_DATABASE_PASSWORD"] %>
