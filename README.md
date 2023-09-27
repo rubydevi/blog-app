@@ -9,7 +9,6 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -34,7 +33,18 @@ In this project, I created a rails app and migrated files to build schema.
 <details>
   <summary>Client</summary>
   <ul> 
+    <li><a href="https://www.ruby-lang.org/en/">HTML</a></li>
+    <li><a href="https://www.ruby-lang.org/en/">CSS</a></li>
+    <li><a href="https://www.ruby-lang.org/en/">Javascript</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Server</summary>
+  <ul> 
     <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+    <li><a href="https://www.ruby-lang.org/en/">Rails</a></li>
+    <li><a href="https://www.ruby-lang.org/en/">PostgreSql</a></li>
   </ul>
 </details>
 
@@ -42,9 +52,9 @@ In this project, I created a rails app and migrated files to build schema.
 
 ### Key Features <a name="key-features"></a>
 
-- Create Rails app
-- Create models
-- Schema
+- CRUD Operation
+- Define Associations
+- Custom methods
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -108,9 +118,9 @@ To test the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Controller specs
-- Processing data
 - Views
+- Forms
+- Validations, Model specs, and n+1 problems
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
