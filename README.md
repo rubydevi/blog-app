@@ -52,9 +52,9 @@ In this project, I created a rails app and migrated files to build schema.
 
 ### Key Features <a name="key-features"></a>
 
-- CRUD Operation
-- Define Associations
-- Custom methods
+- Unit specs
+- Validations
+- Models
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,7 +120,7 @@ To test the project, execute the following command:
 
 - Views
 - Forms
-- Validations, Model specs, and n+1 problems
+- Setup and controllers
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
