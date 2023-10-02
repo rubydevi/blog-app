@@ -9,7 +9,7 @@ RSpec.describe 'Posts', type: :request do
 
     it 'renders the index template' do
       get user_posts_path(123)
-      # expect(response).to render_template(:index)
+      expect(response).to render_template(:index)
     end
 
     it 'includes correct placeholder text in the response body' do
