@@ -52,9 +52,9 @@ In this project, I created a rails app and migrated files to build schema.
 
 ### Key Features <a name="key-features"></a>
 
-- Unit specs
-- Validations
-- Models
+- Views
+- MVC
+- Database
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,9 +118,9 @@ To test the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Views
 - Forms
-- Setup and controllers
+- Add Device
+- Add authorization rules
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
