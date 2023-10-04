@@ -1,1 +1,16 @@
-<h1>Here is a selected user from users list<h1>
+<%= render 'shared/user_card', user: @user %>
+
+<div class="post">
+  <h3>Bio</h3>
+  <div class="post-body">
+    <p><%= @user.bio %></p>
+  </div>
+</div>
+
+<%@user.recent_posts.each do |post|%>
+  <%= render 'shared/post_card', post: post %>
+<%end%>
+
+<div class="btn-container">
+  <%= link_to "See All Posts", user_posts_path(user_id: @user.id), class: 'btn center-btn'%>
+</div>
