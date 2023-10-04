@@ -1,0 +1,21 @@
+.post,
+.comments {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.post-header ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+li {
+  flex: 1;
+}
+
+.pull-right {
+  text-align: right;
+}
