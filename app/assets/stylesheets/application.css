@@ -21,6 +21,18 @@ a:visited {
   color: inherit;
 }
 
+.input {
+  padding: 2%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.f-label {
+  display: flex;
+  align-items: flex-start;
+}
+
 .btn-container {
   display: flex;
   justify-content: center;
