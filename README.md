@@ -52,9 +52,9 @@ In this project, I created a rails app and migrated files to build schema.
 
 ### Key Features <a name="key-features"></a>
 
-- Views
-- MVC
-- Database
+- N + 1
+- Integration Specs
+- Capybara
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -111,6 +111,15 @@ To test the project, execute the following command:
 
 - GitHub: [@rubydevi](https://github.com/rubydevi)
 - LinkedIn: [Chongtham Ruby Devi](https://www.linkedin.com/in/chongtham-bhoomika/)
+
+👤 **Diana Beki**
+- GitHub: [@Github](https://github.com/DianaBeki)
+- Twitter: [@Twitter](https://twitter.com/home)
+- LinkedIn: [@LinkedIn](https://www.linkedin.com/in/diana-beki/)
+
+👤 **Yusuf Sholotan**
+- GitHub: [@yin-ka](https://github.com/yin-ka)
+- LinkedIn: [Yusuf Sholotan](https://www.linkedin.com/in/yusuf-sholotan/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
