@@ -9,7 +9,7 @@
 
 <%# post card %>
 <% @posts.each do |post| %>
-  <a href="/users/<%= post.author_id%>/posts/<%= post.id%>">
+  <a href="<%= user_post_path(@user, post) %>" id="user_post_<%= post.id %>">
     <%= render partial: 'shared/post_card', locals: { post: post } %>
   </a>
   <%# comment card %>

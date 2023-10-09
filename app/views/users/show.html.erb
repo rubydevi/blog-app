@@ -8,7 +8,9 @@
 </div>
 
 <%@user.recent_posts.each do |post|%>
-  <%= render 'shared/post_card', post: post %>
+  <a href="<%= user_post_path(@user, post) %>" id="user_post_<%= post.id %>">
+    <%= render 'shared/post_card', post: post %>
+  </a>
 <%end%>
 
 <div class="btn-container">
