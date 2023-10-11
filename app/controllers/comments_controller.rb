@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
   before_action :set_post
   def new
     @comment = Comment.new
@@ -16,6 +17,17 @@ class CommentsController < ApplicationController
       flash.now[:error] = 'Oops, something went wrong'
       render :new
     end
+  end
+
+  def destroy
+    @comment = @post.comments.find(params[:id])
+    authorize! :destroy, @comment
+    if @comment.destroy
+      flash[:success] = 'Comment was successfully deleted'
+    else
+      flash[:error] = 'Oops! Cannot delete your comment.'
+    end
+    redirect_to user_post_path(@post.author_id, @post.id)
   end
 
   private
