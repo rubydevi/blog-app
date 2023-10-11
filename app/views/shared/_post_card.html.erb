@@ -1,9 +1,14 @@
 <div class="post">
-  <div class="post-title">        
+  <div class="post-title">
+    <a href="<%= user_post_path(@user, post) %>" id="user_post_<%= post.id %>">
       <h3><%= post.title %></h3>
+    </a>
   </div>
   <div class="post-info">
       <p><%= post.text %></p>
+      <% if can? :destroy, post %>
+        <%= button_to "Delete", user_post_path(@user, post.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      <% end %>
       <div class="pull-right">
         <span>Comments: <%= post.comments_counter %></span>,
         <span>Likes: <%= post.likes_counter %></span>
