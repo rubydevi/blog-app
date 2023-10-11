@@ -24,7 +24,7 @@
 
 # 📖 Blog App <a name="blog-app"></a>
 
-In this project, I created a rails app and migrated files to build schema.
+A fully functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -52,9 +52,9 @@ In this project, I created a rails app and migrated files to build schema.
 
 ### Key Features <a name="key-features"></a>
 
-- N + 1
-- Integration Specs
-- Capybara
+- Cookies
+- Session
+- Device
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
