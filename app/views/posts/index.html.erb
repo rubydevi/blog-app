@@ -1,34 +1,34 @@
-<%# user card %>
-<a href="#">
-  <%= render partial: 'shared/user_card', locals: { user: @user } %>
-</a>
-
-<div class="btn-container">
-  <p class="btn"><%= link_to "Add Post", new_user_post_path %><p>
-</div>
-
-<%# post card %>
-<% @posts.each do |post| %>
-  <a href="<%= user_post_path(@user, post) %>" id="user_post_<%= post.id %>">
-    <%= render partial: 'shared/post_card', locals: { post: post } %>
+<div class='container post'>
+  <%# user card %>
+  <a href="#">
+    <%= render partial: 'shared/user_card', locals: { user: @user } %>
   </a>
-  <%# comment card %>
 
-  <div class="comments">
-    <% if post.recent_comments.any? %>
-      <ul>
-        <% post.recent_comments.each do |comment| %>
-          <li>
-            <%= render partial: 'shared/comment_card', locals: { comment: comment } %>
-          </li>
-        <% end %>
-      </ul>
-    <% else %>
-      <p>No recent comments found.</p>
-    <% end %>
+  <div class="btn-container">
+    <p class="btn btn-primary text-white"><%= link_to "Add Post", new_user_post_path %><p>
   </div>
-<% end %>
 
-<div class="btn-container">
-  <button type="button" class="btn center-btn">Pagination</button>
+  <%# post card %>
+  <% @posts.each do |post| %>
+    <%= render partial: 'shared/post_card', locals: { post: post } %>
+    <%# comment card %>
+
+    <div class="comments">
+      <% if post.recent_comments.any? %>
+        <ul>
+          <% post.recent_comments.each do |comment| %>
+            <li>
+              <%= render partial: 'shared/comment_card', locals: { comment: comment } %>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>No recent comments found.</p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="btn-container">
+    <button type="button" class="btn btn-primary text-white">Pagination</button>
+  </div>
 </div>
