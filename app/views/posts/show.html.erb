@@ -18,7 +18,7 @@
         <p><%= @post.text %></p>
     </div>
     <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |f| %>
-      <span><%= f.submit "Like", class: "btn btn-light" %></span>
+      <span><%= f.submit "Like", class: "btn btn-outline-danger btn-sm" %></span>
     <% end %>
   </div>
 
@@ -30,6 +30,6 @@
         </li>
       <% end %>
     </ul>
-    <%= link_to 'Add Comment', new_user_post_comment_path(@user, @post), class: 'btn btn-primary text-white' %>
+    <%= link_to 'Add Comment', new_user_post_comment_path(@user, @post), class: 'btn btn-primary text-white btn-sm' %>
   </div>
 </div>
