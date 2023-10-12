@@ -2,6 +2,14 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
   before_action :set_post
 
+  def index
+    @comments = @post.comments
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @comments }
+    end
+  end
+
   def new
     @comment = Comment.new
   end
