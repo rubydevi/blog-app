@@ -1,0 +1,8 @@
+<div class="container card">
+  <h3>List of comments for <span class="text text-success"><%= @post.title %></span></h3>
+  <div class="col-12">
+    <% @comments.each do |comment| %>
+      <%= comment.text %>
+    <% end %>
+  </div>
+</div>

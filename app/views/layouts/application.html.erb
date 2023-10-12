@@ -14,7 +14,9 @@
 
   <body>
     <div class="pull-right">
-      <h3 class="alert alert-primary">Welcome <%= current_user.name %>!</h3>
+      <% if current_user.present? %>
+        <h3 class="alert alert-primary">Welcome <%= current_user.name %>!</h3>
+      <% end %>
     </div>
     <%= yield %>
     

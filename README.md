@@ -52,9 +52,10 @@ A fully functional website that shows the list of posts and empower readers to i
 
 ### Key Features <a name="key-features"></a>
 
-- Cookies
-- Session
-- Device
+- MVC
+- Integration Specs
+- Authentication & Authorization
+- API Endpoints
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -128,8 +129,8 @@ To test the project, execute the following command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - Forms
-- Add Device
-- Add authorization rules
+- Multiple Roles
+- User Management System
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

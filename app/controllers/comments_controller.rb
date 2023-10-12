@@ -2,6 +2,14 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
   before_action :set_post
 
+  def index
+    @comments = @post.comments
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @comments }
+    end
+  end
+
   def new
     @comment = Comment.new
   end
@@ -11,12 +19,14 @@ class CommentsController < ApplicationController
     @comment.post = @post
     @comment.user = current_user
 
-    if @comment.save
-      flash[:notice] = 'Comment was successfully created.'
-      redirect_to user_post_path(@comment.post.author_id, @comment.post.id)
-    else
-      flash.now[:error] = 'Oops, something went wrong'
-      render :new
+    respond_to do |format|
+      if @comment.save
+        format.html { redirect_to user_post_path(@comment.post.author_id, @comment.post.id) }
+        format.json { render :show, status: :created, location: @comment }
+      else
+        format.html { render :new }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
+      end
     end
   end
 
