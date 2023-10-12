@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   load_and_authorize_resource
   before_action :set_post
+
   def new
     @comment = Comment.new
   end
@@ -21,7 +22,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = @post.comments.find(params[:id])
-    authorize! :destroy, @comment
+
     if @comment.destroy
       flash[:success] = 'Comment was successfully deleted'
     else

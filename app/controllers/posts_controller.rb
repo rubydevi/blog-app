@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
+  before_action :set_current_user, only: %i[new create destroy]
 
   def index
     @user = User.includes(posts: :comments).find(params[:user_id])
@@ -12,12 +13,10 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = current_user
     @post = @user.posts.build
   end
 
   def create
-    @user = current_user
     @post = Post.new(
       author: @user,
       title: params[:post][:title],
@@ -36,9 +35,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @user = current_user
     @post = @user.posts.find(params[:id])
-    authorize! :destroy, @post
+
     if @post.destroy
       flash.now[:success] = "Your post titled: '#{@post.title}' was successfully deleted"
     else
@@ -48,6 +46,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def set_current_user
+    @user = current_user
+  end
 
   def post_params
     params.require(:post).permit(:title, :text)
