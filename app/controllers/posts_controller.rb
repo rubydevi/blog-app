@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+  before_action :set_current_user, only: %i[new create destroy]
+
   def index
     @user = User.includes(posts: :comments).find(params[:user_id])
     @posts = @user.posts.includes(:comments)
@@ -10,12 +13,10 @@ class PostsController < ApplicationController
   end
 
   def new
-    @user = current_user
     @post = @user.posts.build
   end
 
   def create
-    @user = current_user
     @post = Post.new(
       author: @user,
       title: params[:post][:title],
@@ -33,7 +34,22 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = @user.posts.find(params[:id])
+
+    if @post.destroy
+      flash.now[:success] = "Your post titled: '#{@post.title}' was successfully deleted"
+    else
+      flash.now[:error] = 'Oops! Cannot delete your post.'
+    end
+    redirect_to user_posts_path(@user)
+  end
+
   private
+
+  def set_current_user
+    @user = current_user
+  end
 
   def post_params
     params.require(:post).permit(:title, :text)

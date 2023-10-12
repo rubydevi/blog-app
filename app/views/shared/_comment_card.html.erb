@@ -1,1 +1,5 @@
-<%= comment.user.name %>: <%= comment.text %>
+<strong><%= comment.user.name %>:</strong> <%= comment.text %>
+<small class='text text-grey'>(<%= comment.created_at.localtime.strftime('%Y-%m-%d, %H:%M') %>)</small>
+<% if can? :destroy, comment %>
+  <%= button_to "Delete comment", user_post_comment_path(@user, @post, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger pull-right' %>
+<% end %> 

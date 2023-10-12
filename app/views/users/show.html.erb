@@ -1,18 +1,20 @@
-<%= render 'shared/user_card', user: @user %>
+<div class="container post">
+  <%= render 'shared/user_card', user: @user %>
 
-<div class="post">
-  <h3>Bio</h3>
-  <div class="post-body">
-    <p><%= @user.bio %></p>
+  <div class="post">
+    <h3>Bio</h3>
+    <div class="post-body">
+      <p><%= @user.bio %></p>
+    </div>
   </div>
-</div>
 
-<%@user.recent_posts.each do |post|%>
-  <a href="<%= user_post_path(@user, post) %>" id="user_post_<%= post.id %>">
-    <%= render 'shared/post_card', post: post %>
-  </a>
-<%end%>
+  <%@user.recent_posts.each do |post|%>
+    <a href="<%= user_post_path(@user, post) %>" id="user_post_<%= post.id %>">
+      <%= render 'shared/post_card', post: post %>
+    </a>
+  <%end%>
 
-<div class="btn-container">
-  <%= link_to "See All Posts", user_posts_path(user_id: @user.id), class: 'btn center-btn'%>
+  <div class="btn-container">
+    <%= link_to "See All Posts", user_posts_path(user_id: @user.id), class: 'btn btn-primary text-white'%>
+  </div>
 </div>

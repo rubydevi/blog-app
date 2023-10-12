@@ -13,6 +13,21 @@
   </head>
 
   <body>
+    <div class="pull-right">
+      <h3 class="alert alert-primary">Welcome <%= current_user.name %>!</h3>
+    </div>
     <%= yield %>
+    
+    <% if flash[:success] %>
+      <div class="alert alert-success">
+        <%= flash[:success] %>
+      </div>
+    <% end %>
+
+    <% if flash[:error] %>
+      <div class="alert alert-danger">
+        <%= flash[:error] %>
+      </div>
+    <% end %>
   </body>
 </html>
