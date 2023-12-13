@@ -1,0 +1,60 @@
+body {
+  font-family: sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+h3 {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.input {
+  padding: 2%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.f-label {
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.center-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-right {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  height: 80vh;
+}
