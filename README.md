@@ -24,7 +24,7 @@
 
 # 📖 Blog App <a name="blog-app"></a>
 
-A fully functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
+A fully functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts. Users can also register and signin to manage their own posts and comments.
 
 ## 🛠 Built With <a name="built-with"></a>
 
