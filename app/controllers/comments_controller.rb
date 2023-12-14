@@ -2,6 +2,9 @@ class CommentsController < ApplicationController
   load_and_authorize_resource
   before_action :set_post
 
+  # GET /comments
+  # GET /comments.json
+  # Fetches all comments for a specific post and renders them in HTML or JSON format.
   def index
     @comments = @post.comments
     respond_to do |format|
@@ -10,10 +13,14 @@ class CommentsController < ApplicationController
     end
   end
 
+  # GET /comments/new
+  # Initializes a new comment object.
   def new
     @comment = Comment.new
   end
 
+  # POST /comments
+  # Creates a new comment for a specific post.
   def create
     @comment = Comment.new(comment_params)
     @comment.post = @post
@@ -30,6 +37,8 @@ class CommentsController < ApplicationController
     end
   end
 
+  # DELETE /comments/:id
+  # Deletes a comment for a specific post.
   def destroy
     @comment = @post.comments.find(params[:id])
 
@@ -43,10 +52,12 @@ class CommentsController < ApplicationController
 
   private
 
+  # Sets the @post instance variable based on the post_id parameter.
   def set_post
     @post = Post.find(params[:post_id])
   end
 
+  # Defines the permitted parameters for creating a comment.
   def comment_params
     params.require(:comment).permit(:text)
   end
